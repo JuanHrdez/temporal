@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ubicación Vendedor</title>
+</head>
+<body>
+  <h2>📍 Enviar Ubicación del Vendedor</h2>
+  <button onclick="getLocation()">Obtener y Enviar Ubicación</button>
+  <p id="status"></p>
+
+  <script>
+    function getLocation() {
+      if (navigator.geolocation) {
+        document.getElementById("status").innerText = "Obteniendo ubicación...";
+        navigator.geolocation.getCurrentPosition(enviarCorreo, mostrarError);
+      } else {
